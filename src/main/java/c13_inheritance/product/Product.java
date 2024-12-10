@@ -13,6 +13,8 @@ public class Product extends Item{
         this.stock = stock;
     }
 
+
+
     public Product(String name, String category) {
         super(name, category);
     }
