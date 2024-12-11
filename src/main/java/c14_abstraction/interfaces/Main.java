@@ -64,10 +64,23 @@ public class Main {
 //        remoteController1.onPressedChannelDownButton();
 //        remoteController1.onUpChannelUpButton();
 //        remoteController1.onPressedChannelUpButton();
-        remoteController1.onDownVolumeDownButton();
-        remoteController1.onPressedVolumeDownButton();
-        remoteController1.onUpVolumeUpButton();
-        remoteController1.onPressedVolumeUpButton();
+//        remoteController1.onDownVolumeDownButton();
+//        remoteController1.onPressedVolumeDownButton();
+//        System.out.println();
+//        remoteController1.onUpVolumeUpButton();
+//        remoteController1.onPressedVolumeUpButton();
+        
+        // AirConditionerController 객체 생성
+        AirConditionerController airConditionerController1 = new AirConditionerController(new PowerButton(), new TemperatureDownButton(), new TemperatureUpButton());
+
+        airConditionerController1.onPressedPowerButton();
+        airConditionerController1.onPressedPowerButton();
+        System.out.println();
+        airConditionerController1.onPressedTemperatureDownButton();
+        airConditionerController1.onDownTemperatureDownButton();
+        System.out.println();
+        airConditionerController1.onPressedTemperatureUpButton();
+        airConditionerController1.onUpTemperatureUpButton();
 
     }
 }
