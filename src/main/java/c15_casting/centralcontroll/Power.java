@@ -1,4 +1,4 @@
-package c15_casting.centralcontrol;
+package c15_casting.centralcontroll;
 
 public interface Power {
     void on();
