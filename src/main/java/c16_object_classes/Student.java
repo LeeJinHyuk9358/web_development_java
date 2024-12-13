@@ -1,4 +1,7 @@
 package c16_object_classes;
+
+import java.util.Objects;
+
 /*
     toString(), equals(), hashCode()
     
@@ -23,5 +26,59 @@ package c16_object_classes;
             - 해시 코드가 같다고 해서 항상 equals()가 true인 것은 아니라는 점입니다.
  */
 public class Student {
-    
+    /*
+        1. Student 클래스에 학생의 이름(name)과, 학번(studentId)를 저장하는 필드를 작성하세요
+        2. equals(), hashCode() 메서드를 재정의하여 학생 객체들이 같은지 여부를 이름과 학번으로 비교하도록 작성하세요.
+
+        지시 사항
+            1. Student 클래스는 name과 studentId를 private 접근 지정자로 가지고 있어야 함.
+            2. AllArgsConstructor로 생성자를 만들어야 함.
+                - student1 - name = "안근수" / studentId = 20241213
+                - student2 - name = "여러분본명" / studentId = 20240000
+            3. equals() 메서드를 오버라이드하여, 두 학생 객체가 이름과 학번이 모두 같으면 true를 반환하도록 구현해야 함.
+            4. hashCode() 메서드를 오버라이드하여, 이름과 학번을 기반으로 한 해시 코드를 반환하도록 구현해야 함.
+            5. 각 필드별로 getter와 setter를 구현해야함.
+            6. Student 클래스를 활용하여, 학생 객체를 생성하고 toString() 메서드를 이용해 학생의 이름과 학번을 포함한
+                모든 정보를 출력하는 예제를 작성하시오.
+     */
+    private String name;
+    private int studentId;
+
+    public Student(String name, int studentId) {
+        this.name = name;
+        this.studentId = studentId;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getStudentId() {
+        return studentId;
+    }
+
+    public void setStudentId(int studentId) {
+        this.studentId = studentId;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (!(o instanceof Student student)) return false;
+        return studentId == student.studentId && Objects.equals(name, student.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, studentId);
+    }
+
+    // 재정의 한 번 해보겠습니다.
+    @Override
+    public String toString() {
+        return  "해당 학생의 이름은 " + name + "이고, 학번은 " + studentId + "입니다.";
+    }
 }
