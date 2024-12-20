@@ -72,12 +72,12 @@ public class StudentSet {
         // 순서를 정렬할 int 하나 선언하겠습니다.
         int orderId = 20250000;
         List<Student> sortedStudents = new ArrayList<>();
-        for(int i = 0; i< students.size() ; i++){   // size는 set의 사이즈대로 반복
+        for(int i = 0; i< students.size() ; i++) {   // size는 set의 사이즈대로 반복
             orderId++;
-            for(Student student : students) {
-                if(student.getId() == orderId) {        // 객체의 필드인 id가 20250001부터 해서 오름차순 정렬
+            for (Student student : students) {
+                if (student.getId() == orderId) {        // 객체의 필드인 id가 20250001부터 해서 오름차순 정렬
                     sortedStudents.add(student);        // 해당 실행문이 실행됐다면 위의 조건문이 true를 의미
-                }                                       // 하기 때문에 순서대로 list에 저장될 예정입니다.
+                }
             }
         }
         System.out.println("정렬된 list : " + sortedStudents);
